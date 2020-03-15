@@ -52,7 +52,9 @@ public class FootLook extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {//菜单项上的按钮
         switch(item.getItemId()){
             case R.id.add_item:
-                Toast.makeText(this,"添加照片成功",Toast.LENGTH_SHORT).show();//屏幕底端的提示
+                Intent intent = new Intent(FootLook.this, PhotoPage.class);
+                startActivity(intent);
+                Toast.makeText(this,"请选择添加照片方式",Toast.LENGTH_SHORT).show();//屏幕底端的提示
                 break;
             case R.id.remove_item:
                 Toast.makeText(this,"删除照片成功",Toast.LENGTH_SHORT).show();

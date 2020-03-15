@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/add_item"
+        android:title="添加照片"/>
+    <item
+        android:id="@+id/remove_item"
+        android:title="删除照片"/>
+    <item
+        android:id="@+id/synchro_item"
+        android:title="开工文件同步"/>
+    <item
+        android:id="@+id/back_item"
+        android:title="返回"/>
+</menu>
