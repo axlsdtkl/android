@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom|center"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tabbar_height"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TabButton"
+                android:drawableTop="@drawable/tab_home_selector"
+                android:text="首" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_pdf"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TabButton"
+                android:drawableTop="@drawable/tab_pdf_selector"
+                android:text="脚型报告" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_obj"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TabButton"
+                android:drawableTop="@drawable/tab_obj_selector"
+                android:text="脚型模型" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/TabButton"
+                android:drawableTop="@drawable/tab_mine_selector"
+                android:text="我" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
