@@ -58,19 +58,23 @@ public class Register extends AppCompatActivity {
                                 InputStream in = connection.getInputStream();
                                 BufferedReader reader = new BufferedReader(new InputStreamReader(in));
                                 String result = reader.readLine();//读取服务器进行逻辑处理后页面显示的数据
-                                if (result.equals("register successfully!")){
+                                if (result.equals("注册成功!")){
                                     new Thread(new Runnable(){
                                         int initial=0;
                                         public void run(){
                                             Looper.prepare();
-                                            Toast.makeText(Register.this,"You register successfully!",Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Register.this,"注册成功!",Toast.LENGTH_SHORT).show();
                                             Looper.loop();
                                         }
                                     }).start();
                                     finish();
-                                }else if(result.equals("can not register!")){
+                                }else if(result.equals("注册失败!")){
                                     Looper.prepare();
-                                    Toast.makeText(Register.this,"You can not register!!",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Register.this,"注册失败!",Toast.LENGTH_SHORT).show();
+                                    Looper.loop();
+                                }else if(result.equals("注册失败，用户已存在!")){
+                                    Looper.prepare();
+                                    Toast.makeText(Register.this,"注册失败，用户已存在!",Toast.LENGTH_SHORT).show();
                                     Looper.loop();
                                 }
                             }catch (MalformedURLException e){}

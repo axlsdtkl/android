@@ -58,20 +58,31 @@ public class Register extends HttpServlet {
 		String uri = "jdbc:mysql://localhost/MakeFriend?useSSL=false&serverTimezone=UTC";
 		try {
 			con = DriverManager.getConnection(uri,"root","gunxueqiu");
-			String sqladd="insert into member(logname,password)values(?,?)";
-			PreparedStatement ps=con.prepareStatement(sqladd);
-			ps.setString(1,logname);
-			System.out.println("name:"+logname);
-			ps.setString(2,password);
-			int row=ps.executeUpdate();
-			if(row>0){
-				out.println("register successfully!");
+			String condition = "select * from member where logname = '"+logname+"'";
+			boolean haveuser=false;
+			sql = con.prepareStatement(condition);
+			ResultSet rSet = sql.executeQuery(condition);
+			if(rSet.next()) {
+				haveuser=true;
 			}
-			else {
-				out.println("can not register!");
+			if(haveuser==false) {
+				con = DriverManager.getConnection(uri,"root","gunxueqiu");
+				String sqladd="insert into member(logname,password)values(?,?)";
+				PreparedStatement ps=con.prepareStatement(sqladd);
+				ps.setString(1,logname);
+				System.out.println("name:"+logname);
+				ps.setString(2,password);
+				int row=ps.executeUpdate();
+				if(row>0){
+					out.println("注册成功!");
+				}
+				else {
+					out.println("注册失败!");
+				}
+				ps.close();
+				con.close();
 			}
-			ps.close();
-			con.close();
+			else out.println("注册失败，用户已存在!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
