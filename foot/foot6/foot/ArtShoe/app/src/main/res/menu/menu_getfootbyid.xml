@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+<!--    <item-->
+<!--&lt;!&ndash;        android:id="@+id/menu_uploadid"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:orderInCategory="1"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:icon="@drawable/ic_upload"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:showAsAction="ifRoom"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:title="上传ID"/>&ndash;&gt;-->
+</menu>
