@@ -20,7 +20,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/*得到服务器的状态
+ *是否服务器正在重建中
+ *是否服务器已经完成了重建
+ *通过数据库中的state状态来告诉客户端当前情况
+ */
 
 public class GetService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -54,11 +58,12 @@ public class GetService extends HttpServlet {
 		if(question.equals("state")) {
 			try {
 				con = DriverManager.getConnection(uri,"root","gunxueqiu");
-				
+				//查询服务器当前的state状态
 				String condition = "select * from buildingstate where building = 'bat'";
 				sql = con.prepareStatement(condition);
 				ResultSet rSet = sql.executeQuery(condition);
 				if(rSet.next()) {
+					//获取数据库state状态
 					String state=rSet.getString("state");
 					System.out.println(state);
 					out.println(state);

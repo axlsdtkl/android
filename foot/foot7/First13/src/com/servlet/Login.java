@@ -120,6 +120,7 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	//下面的是调用系统bat要用的，因为输出太多，会出现卡死情况，必须要及时取出数据
 	class InputStreamRunnable extends Thread {
 	    BufferedReader bReader = null;
 	    String type = null;
